@@ -16,3 +16,17 @@ input[type='number']::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
+:root {
+  /* For background */
+  --primary: rgb(61, 152, 79);
+  --secondary: rgb(126, 129, 225);
+  --color1: 235, 237, 102;
+  --color2: 185, 102, 237;
+  --color3: 117, 240, 227;
+  --color4: 102, 62, 176;
+  --color5: 180, 232, 121;
+  --color-follow: 140, 100, 255;
+  --circle-size: 80%;
+  --blending: hard-light;
+}
