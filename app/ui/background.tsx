@@ -1,11 +1,12 @@
 "use client";
 
 import clsx from 'clsx';
-import { HTMLAttributes } from 'react';
 import gsap from 'gsap';
+import { HTMLAttributes } from 'react';
 
 import { gaussianRandom } from '@/app/lib/utils';
-import '@/app/ui/background/background.css';
+
+import styles from '@/app/ui/background.module.css';
 
 const MEAN_OFFSET = 0.10;
 const MEAN_DURATION = 8;
@@ -14,7 +15,6 @@ interface BackgroundProps extends HTMLAttributes<HTMLDivElement> {
 	className?: string;
 }
 
-// Randomly animate bubbles, but keep them approximately at center
 interface AnimateOptions {
 	x: number;
 	y: number;
@@ -23,11 +23,10 @@ interface AnimateOptions {
 	onComplete: () => void;
 }
 
-
-// Randomly animate bubbles
+// Randomly animate bubbles, but keep them approximately at center
 function animateRandomly(element: HTMLElement, mean_offset: number = MEAN_OFFSET, mean_duration: number = MEAN_DURATION, start_x: number = 0, start_y: number = 0) {
-	let x: number = gaussianRandom(start_x, window.innerWidth * mean_offset);
-	let y: number = gaussianRandom(start_y, window.innerHeight * mean_offset);
+	const x: number = gaussianRandom(start_x, window.innerWidth * mean_offset);
+	const y: number = gaussianRandom(start_y, window.innerHeight * mean_offset);
 	const options: AnimateOptions = {
 		x: x,
 		y: y,
@@ -40,6 +39,7 @@ function animateRandomly(element: HTMLElement, mean_offset: number = MEAN_OFFSET
 	gsap.to(element, options);
 }
 
+// Follow mouse with a bubble
 function followMouse(element: HTMLElement) {
 	document.addEventListener('mousemove', (e) => {
 		gsap.to(element, {
@@ -56,18 +56,17 @@ function followMouse(element: HTMLElement) {
 	});
 }
 
-
 export function Background({ className, ...rest }: BackgroundProps) {
 	return (
 		<div
 			{...rest}
 			className={clsx(
-				'background',
+				styles.background,
 				'fixed inset-0 z-0',
 				className
 			)}
 		>
-			<svg xmlns="http://www.w3.org/2000/svg">
+			<svg xmlns="http://www.w3.org/2000/svg" className={styles.filter}>
 				<defs>
 					<filter id="goo">
 						<feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
@@ -76,13 +75,13 @@ export function Background({ className, ...rest }: BackgroundProps) {
 					</filter>
 				</defs>
 			</svg>
-			<div className="bubbles-container">
-				<span className="bubble bubble-1" ref={el => { if (el) animateRandomly(el); }}></span>
-				<span className="bubble bubble-2" ref={el => { if (el) animateRandomly(el); }}></span>
-				<span className="bubble bubble-3" ref={el => { if (el) animateRandomly(el); }}></span>
-				<span className="bubble bubble-4" ref={el => { if (el) animateRandomly(el); }}></span>
-				<span className="bubble bubble-5" ref={el => { if (el) animateRandomly(el); }}></span>
-				<div className="bubble follow" ref={el => { if (el) followMouse(el); }}></div>
+			<div className={styles.bubblesContainer}>
+				<span className={clsx(styles.bubble, styles.bubble1)} ref={el => { if (el) animateRandomly(el); }}></span>
+				<span className={clsx(styles.bubble, styles.bubble2)} ref={el => { if (el) animateRandomly(el); }}></span>
+				<span className={clsx(styles.bubble, styles.bubble3)} ref={el => { if (el) animateRandomly(el); }}></span>
+				<span className={clsx(styles.bubble, styles.bubble4)} ref={el => { if (el) animateRandomly(el); }}></span>
+				<span className={clsx(styles.bubble, styles.bubble5)} ref={el => { if (el) animateRandomly(el); }}></span>
+				<div className={clsx(styles.bubble, styles.follow)} ref={el => { if (el) followMouse(el); }}></div>
 			</div>	
 		</div>
 	);

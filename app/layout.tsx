@@ -1,7 +1,9 @@
 import "@/app/ui/global.css";
 import { emphasisFont } from '@/app/ui/fonts';
 import { Metadata } from 'next';
-import { Background } from "@/app/ui/background/background"; 
+import { Background } from "@/app/ui/background"; 
+
+const HAS_BACKGROUND = true;
 
 export const metadata: Metadata = {
   title: {
@@ -11,6 +13,7 @@ export const metadata: Metadata = {
   description: 'A meditation app for relaxation and mindfulness.',
 };
 
+
 export default function RootLayout({
   children,
 }: {
@@ -18,14 +21,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`
-        ${emphasisFont.className} antialiased bg-stone-700`}>
+      <body className={`${emphasisFont.className} antialiased bg-gradient-to-br from-stone-600 to-stone-700`}>
         <div className="relative z-10">
           {children}
-
         </div>
 
-        <Background />
+        {HAS_BACKGROUND && <Background />}
       </body>
     </html>
   );

@@ -14,12 +14,17 @@ export default {
       },
       keyframes: {
         appear: {
-          "0%": { opacity: 0 },
-          "100%": { opacity: 1 },
+          "0%": { opacity: '0' },
+          "100%": { opacity: '1' },
+        },
+        scalex: {
+          "0%": { transform: "scaleX(0)" },
+          "100%": { transform: "scaleX(1)" },
         },
       },
       animation: {
         appear: "appear 2s ease-in-out",
+        underlineButton: "scalex 1.5s ease-in-out",
       },
     },
   },
