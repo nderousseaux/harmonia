@@ -8,6 +8,9 @@ export default {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        'radial-custom': 'radial-gradient(circle, #ff0000, #0000ff)',
+      },    
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",

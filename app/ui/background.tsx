@@ -8,6 +8,8 @@ import { gaussianRandom } from '@/app/lib/utils';
 
 import styles from '@/app/ui/background.module.css';
 
+const HAS_BUBBLES = true;
+
 const MEAN_OFFSET = 0.10;
 const MEAN_DURATION = 8;
 
@@ -65,24 +67,28 @@ export function Background({ className, ...rest }: BackgroundProps) {
 				'fixed inset-0 z-0',
 				className
 			)}
-		>
-			<svg xmlns="http://www.w3.org/2000/svg" className={styles.filter}>
-				<defs>
-					<filter id="goo">
-						<feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-						<feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8" result="goo" />
-						<feBlend in="SourceGraphic" in2="goo" />
-					</filter>
-				</defs>
-			</svg>
-			<div className={styles.bubblesContainer}>
-				<span className={clsx(styles.bubble, styles.bubble1)} ref={el => { if (el) animateRandomly(el); }}></span>
-				<span className={clsx(styles.bubble, styles.bubble2)} ref={el => { if (el) animateRandomly(el); }}></span>
-				<span className={clsx(styles.bubble, styles.bubble3)} ref={el => { if (el) animateRandomly(el); }}></span>
-				<span className={clsx(styles.bubble, styles.bubble4)} ref={el => { if (el) animateRandomly(el); }}></span>
-				<span className={clsx(styles.bubble, styles.bubble5)} ref={el => { if (el) animateRandomly(el); }}></span>
-				<div className={clsx(styles.bubble, styles.follow)} ref={el => { if (el) followMouse(el); }}></div>
-			</div>	
+		>	
+			{HAS_BUBBLES &&
+				<>
+					<svg xmlns="http://www.w3.org/2000/svg" className={styles.filter}>
+						<defs>
+							<filter id="goo">
+								<feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+								<feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8" result="goo" />
+								<feBlend in="SourceGraphic" in2="goo" />
+							</filter>
+						</defs>
+					</svg>
+					<div className={styles.bubblesContainer}>
+						<span className={clsx(styles.bubble, styles.bubble1)} ref={el => { if (el) animateRandomly(el); }}></span>
+						<span className={clsx(styles.bubble, styles.bubble2)} ref={el => { if (el) animateRandomly(el); }}></span>
+						<span className={clsx(styles.bubble, styles.bubble3)} ref={el => { if (el) animateRandomly(el); }}></span>
+						<span className={clsx(styles.bubble, styles.bubble4)} ref={el => { if (el) animateRandomly(el); }}></span>
+						<span className={clsx(styles.bubble, styles.bubble5)} ref={el => { if (el) animateRandomly(el); }}></span>
+						<div className={clsx(styles.bubble, styles.follow)} ref={el => { if (el) followMouse(el); }}></div>
+					</div>	
+				</>
+			}
 		</div>
 	);
 }

@@ -1,9 +1,9 @@
 <p align="center">
-	<img src="https://skillicons.dev/icons?i=ts,next,tailwind,vercel" height="30" />
+	<img src="https://skillicons.dev/icons?i=ts,next,tailwind,gsap,vercel" height="30" />
 </p>
 
 <p align="center">
-	<img src="docs/logo.svg" alt="Icon of the project" height="150"/>
+	<img src="docs/logo.png" alt="Icon of the project" height="150"/>
 </p>
 
 # <div align="center">Harmonia</div>
