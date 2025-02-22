@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 import { formatDuration } from "@/app/lib/utils";
-import clsx from 'clsx';
 
 interface LessonCardProps {
 	className?: string;
