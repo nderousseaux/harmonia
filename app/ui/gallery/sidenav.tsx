@@ -1,11 +1,12 @@
 import Link from 'next/link';
 
-import LessonCard from '@/app/ui/gallery/lesson-card';
+import NavItem from '@/app/ui/gallery/nav-item';
 import HarmoniaLogo from '@/app/ui/harmonia-logo';
 
-import { lessons } from '@/app/lib/placeholder-data';
+import { fetchLessons } from '@/app/lib/data';
 
-export default function SideNav() {
+export default async function SideNav() {
+  const lessons = await fetchLessons();
   return (
     <nav className="flex h-full flex-col pt-4 gap-4 bg-slate-700 bg-opacity-45">
       <Link
@@ -21,7 +22,7 @@ export default function SideNav() {
 
         <div className="overflow-y-auto h-full">
           {lessons.map((lesson, index) => (
-            <LessonCard key={index} isFirst={index === 0} data={lesson} />
+            <NavItem key={index} isFirst={index === 0} data={lesson} />
           ))}
         </div>
 

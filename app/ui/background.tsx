@@ -8,7 +8,7 @@ import { gaussianRandom } from '@/app/lib/utils';
 
 import styles from '@/app/ui/background.module.css';
 
-const HAS_BUBBLES = true;
+const HAS_BUBBLES = false;
 
 const MEAN_OFFSET = 0.10;
 const MEAN_DURATION = 8;

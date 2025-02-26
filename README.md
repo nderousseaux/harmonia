@@ -1,7 +1,7 @@
 ![Project still in development](https://img.shields.io/badge/status-in%20development-yellow)
 
 <p align="center">
-	<img src="https://skillicons.dev/icons?i=ts,next,tailwind,vercel" height="30" />
+	<img src="https://skillicons.dev/icons?i=ts,next,tailwind,postgresql,vercel" height="30" />
 </p>
 
 <p align="center">
@@ -18,7 +18,8 @@
 
 ## ℹ️ About
 Harmonia is a web app that helps you relax with sophrology exercises. It permit you to listen to audio exercises and follow the instructions to relax. It is built with Next.js, Tailwind CSS and Vercel. 
-<!-- It use a PostgreSQL database and a blob storage to store the audio files. -->
+It use a PostgreSQL database.
+ <!-- and a blob storage to store the audio files. -->
 
 <!-- <p align="center">
 	<img src="docs/img/dashboard.png" alt="Dashboard" width="1000"/>
@@ -52,15 +53,23 @@ This project implement the best practices of web app development :
 ## 🛠️ Getting started
 
 ### Installation
+
 ```bash
 $ pnpm install
-# $ cp .env.example .env
+$ cp .env.example .env
 ```
 
-<!-- 
-And fill the `.env` file with the appropriate values. (fill the `AUTH_SECRET` with the output of `openssl rand -base64 32`)
+Fill the `.env` file with your own values. Then, init the database with the struct.sql file :
 
-Then, you can go to `localhost:3000/seed` to seed the database with some dummy data. -->
+```bash
+$ plsql -U <user> -d <database> -f data/struct.sql
+````
+
+And finally, fill the database with your own data.
+```bash
+$ plsql -U <user> -d <database> -f data/exemple-data.sql
+```
+<!-- (fill the `AUTH_SECRET` with the output of `openssl rand -base64 32`) -->
 
 ### Development
 ```bash
