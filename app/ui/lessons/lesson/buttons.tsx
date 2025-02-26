@@ -15,8 +15,8 @@ export function MarkAsRead({ id, is_read }: { id: string, is_read: boolean }) {
         {/* Tooltip */}
         <div className="absolute bottom-full mb-2 flex items-center gap-2 bg-slate-700 bg-opacity-45 rounded-lg p-2 whitespace-nowrap transform opacity-0 group-hover:opacity-100 transition-opacity">
           {is_read ?
-            <p className="text-white text-sm font-semibold">Mark as unread</p>
-            : <p className="text-white text-sm font-semibold">Mark as read</p>
+            <p className="text-white text-sm font-semibold">Marquer comme non-écouté</p>
+            : <p className="text-white text-sm font-semibold">Marquer comme écouté</p>
           }
         </div>
       </button>
