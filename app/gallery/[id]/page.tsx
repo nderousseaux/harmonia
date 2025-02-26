@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import Image from 'next/image';
 
-// import { MarkAsRead } from '@/app/ui/gallery/lesson/buttons';
+import { MarkAsRead } from '@/app/ui/gallery/lesson/buttons';
 import { fetchLessonById } from '@/app/lib/data';
 import { Tag } from '@/app/ui/gallery/lesson/tag';
 import { Player } from '@/app/ui/gallery/lesson/player';
@@ -36,7 +36,7 @@ export default async function Page(props: { params: Promise<{ id: string }> }) {
 						</p>
 					</div>
 
-					{/* <MarkAsRead id={id} isRead={lesson.isRead} /> */}
+					<MarkAsRead id={id} is_read={lesson.is_read} />
 				</div>
 
 				<div className="flex space-x-3">
