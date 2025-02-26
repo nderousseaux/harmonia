@@ -9,7 +9,7 @@ export function Player({ className }: PlayerProps) {
   return (
     <div className={clsx(
       className,
-      "flex flex-col items-center justify-center w-full gap-4 bg-slate-700 bg-opacity-45 rounded-lg pt-8 overflow-hidden"
+      "flex flex-col items-center justify-center gap-4 bg-slate-700 bg-opacity-45 rounded-lg pt-8 overflow-hidden"
     )}>
 
       <Orb 

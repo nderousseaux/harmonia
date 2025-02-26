@@ -3,18 +3,12 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-import { formatDuration } from "@/app/lib/utils";
+import { Lesson } from '@/app/lib/definitions';
 
-interface LessonCardProps {
+interface NavItemProps {
 	className?: string;
   isFirst?: boolean;
-  data: {
-    id: string;
-    title: string;
-    description: string;
-    duration: number;
-    isRead: boolean;
-  }
+  data: Lesson;
 }
 
 function Delimiter() {
@@ -23,11 +17,12 @@ function Delimiter() {
   )
 }
 
-export default function LessonCard({ className, isFirst, data }: LessonCardProps) {
+export default function NavItem({ className, isFirst, data }: NavItemProps) {
   const pathname = usePathname();
+
   return (
     <Link 
-      href={`/gallery/${data.id}`}
+      href={`/lessons/${data.id}`}
       className={`${className}`}
     >
 
@@ -44,7 +39,7 @@ export default function LessonCard({ className, isFirst, data }: LessonCardProps
           <div className="flex gap-2">
             <h3 className="text-white font-semibold">{data.title}</h3>
             {
-              !data.isRead && (
+              !data.is_read && (
                 <div className="w-2 h-2 bg-white rounded-full self-center translate-y-[1px]"></div>
               )
             }
@@ -53,7 +48,7 @@ export default function LessonCard({ className, isFirst, data }: LessonCardProps
         </div>
 
         <div className="w-20 shrink-0 bg-opacity-20 flex flex-col items-center justify-center">
-          <p className="text-white text-sm font-semibold">{formatDuration(data.duration)}</p>
+          <p className="text-white text-sm font-semibold">{data.duration}</p>
         </div>
 
       </div>

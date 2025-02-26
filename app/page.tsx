@@ -12,7 +12,7 @@ export default function Page() {
         <p>Bienvenue sur Harmonia. Découvrez une application de sophrologie et de méditation conçue pour vous aider à retrouver calme et équilibre, où que vous soyez.</p>
 
         <div>
-          <Button className='' href="/gallery"> Commencer </Button>
+          <Button className='' href="/lessons"> Commencer </Button>
         </div>
           
       </div>

@@ -1,10 +1,10 @@
 import { Metadata } from 'next';
 import Image from 'next/image';
 
-import { MarkAsRead } from '@/app/ui/gallery/lesson/buttons';
+import { MarkAsRead } from '@/app/ui/lessons/lesson/buttons';
 import { fetchLessonById } from '@/app/lib/data';
-import { Tag } from '@/app/ui/gallery/lesson/tag';
-import { Player } from '@/app/ui/gallery/lesson/player';
+import { Tag } from '@/app/ui/lessons/lesson/tag';
+import { Player } from '@/app/ui/lessons/lesson/player';
 
 export const metadata: Metadata = {
   title: "A peaceful audio tracks for help you meditate",

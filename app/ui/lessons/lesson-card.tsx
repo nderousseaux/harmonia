@@ -3,12 +3,16 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-import { Lesson } from '@/app/lib/definitions';
-
-interface NavItemProps {
+interface LessonCardProps {
 	className?: string;
   isFirst?: boolean;
-  data: Lesson;
+  data: {
+    id: string;
+    title: string;
+    description: string;
+    duration: number;
+    isRead: boolean;
+  }
 }
 
 function Delimiter() {
@@ -17,12 +21,11 @@ function Delimiter() {
   )
 }
 
-export default function NavItem({ className, isFirst, data }: NavItemProps) {
+export default function LessonCard({ className, isFirst, data }: LessonCardProps) {
   const pathname = usePathname();
-
   return (
     <Link 
-      href={`/gallery/${data.id}`}
+      href={`/lessons/${data.id}`}
       className={`${className}`}
     >
 
@@ -39,7 +42,7 @@ export default function NavItem({ className, isFirst, data }: NavItemProps) {
           <div className="flex gap-2">
             <h3 className="text-white font-semibold">{data.title}</h3>
             {
-              !data.is_read && (
+              !data.isRead && (
                 <div className="w-2 h-2 bg-white rounded-full self-center translate-y-[1px]"></div>
               )
             }
