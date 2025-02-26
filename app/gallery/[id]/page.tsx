@@ -18,7 +18,7 @@ export default async function Page(props: { params: Promise<{ id: string }> }) {
 	const lesson = await fetchLessonById(id);
 	
   return (		
-		<main className="h-full w-full space-y-10 text-white">
+		<main className="h-full w-full space-y-10 text-white overflow-scroll pt-24 pb-10 px-32">
 
 
 			{/* Title and tag */}
@@ -61,7 +61,7 @@ export default async function Page(props: { params: Promise<{ id: string }> }) {
 					Conseils
 				</h2>
 				<p className="opacity-75">
-					Pour tirer le meilleur parti de cette séance, créez un espace calme et confortable. Éteignez les distractions et assurez-vous d'être dans une posture adaptée, que ce soit sur un coussin ou une chaise.
+					Pour tirer le meilleur parti de cette séance, créez un espace calme et confortable. Éteignez les distractions et assurez-vous d&apos;être dans une posture adaptée, que ce soit sur un coussin ou une chaise.
 				</p>
 			</section>
 
@@ -77,7 +77,7 @@ export default async function Page(props: { params: Promise<{ id: string }> }) {
 			{/* Comments */}
 			<section className="space-y-3">
 				<h2 className="font-semibold text-2xl">
-					À propos de l'instructeur
+					À propos de l&apos;instructeur
 				</h2>
 				<div className="flex space-x-5">
 					<div className="aspect-square shrink-0">
@@ -93,7 +93,7 @@ export default async function Page(props: { params: Promise<{ id: string }> }) {
 							Marie Dupont
 						</h3>
 						<p className="opacity-75">
-							Instructrice certifiée en méditation guidée, forte de plus de 10 ans d'expérience, spécialisée dans les techniques de pleine conscience pour la réduction du stress.
+							Instructrice certifiée en méditation guidée, forte de plus de 10 ans d&apos;expérience, spécialisée dans les techniques de pleine conscience pour la réduction du stress.
 						</p>
 					</div>
 				</div>

@@ -29,4 +29,6 @@ input[type='number']::-webkit-outer-spin-button {
   --color-follow: 140, 100, 255;
   --circle-size: 80%;
   --blending: hard-light;
+
+  overflow: hidden;
 }
