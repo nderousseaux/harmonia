@@ -28,9 +28,8 @@ export default async function Page(props: { params: Promise<{ id: string }> }) {
 
 					<div className="flex items-center space-x-3">
 						<h1 className="font-semibold text-3xl">
-							{lesson.title}
+							{lesson.title} -
 						</h1>
-						<div className="w-2 h-2 bg-white rounded-full self-center translate-y-[2px]"></div>
 						<p className="text-xl font-semibold opacity-50 translate-y-[2px]">
 							{formatDuration(lesson.duration)}
 						</p>
