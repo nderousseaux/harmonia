@@ -40,7 +40,9 @@ export function Player({ className, path, duration }: PlayerProps) {
     if (audio) {
       audio.addEventListener('timeupdate', updateProgress);
       // Set initial progress to 0
-      progress.style.width = '0%';
+      if (progress) {
+        progress.style.width = '0%';
+      }
     }
 
     return () => {
