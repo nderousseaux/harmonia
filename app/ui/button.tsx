@@ -1,5 +1,6 @@
 import clsx from 'clsx';
-import Link from 'next/link';
+// import Link from 'next/link';
+import { TransitionLink } from '@/app/ui/TransitionLink';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 	children: React.ReactNode;
@@ -11,7 +12,7 @@ export function Button({ children, className, href }: ButtonProps) {
 	const stringHref = href || ''; 
 
 	return (
-		<Link
+		<TransitionLink
 			className={clsx(
 				className, 
 				'relative',
@@ -22,6 +23,6 @@ export function Button({ children, className, href }: ButtonProps) {
 			href={stringHref}
 		>
 			{children}
-		</Link>
+		</TransitionLink>
 	);
 }
