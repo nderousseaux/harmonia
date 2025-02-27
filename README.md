@@ -27,9 +27,10 @@ It use a PostgreSQL database, and a blob storage to store the audio files.
 
 ## ✨ Features
 - Display a list of lessons
-<!-- - Display information about a lesson
+- Display information about a lesson
 - Play the audio of a lesson
-- Mark the lesson as done -->
+<!-- - Navigate between the audio of a lesson -->
+- Mark the lesson as done
 
 
 ## 🚀 Tech Stack & Practices
@@ -63,11 +64,6 @@ Fill the `.env` file with your own values. Then, init the database with the stru
 ```bash
 $ plsql -U <user> -d <database> -f data/struct.sql
 ````
-
-And finally, fill the database with your own data.
-```bash
-$ plsql -U <user> -d <database> -f data/exemple-data.sql
-```
 
 
 ### Development
