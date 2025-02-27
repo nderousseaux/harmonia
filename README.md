@@ -18,8 +18,7 @@
 
 ## ℹ️ About
 Harmonia is a web app that helps you relax with sophrology exercises. It permit you to listen to audio exercises and follow the instructions to relax. It is built with Next.js, Tailwind CSS and Vercel. 
-It use a PostgreSQL database.
- <!-- and a blob storage to store the audio files. -->
+It use a PostgreSQL database, and a blob storage to store the audio files.
 
 <!-- <p align="center">
 	<img src="docs/img/dashboard.png" alt="Dashboard" width="1000"/>
@@ -69,7 +68,7 @@ And finally, fill the database with your own data.
 ```bash
 $ plsql -U <user> -d <database> -f data/exemple-data.sql
 ```
-<!-- (fill the `AUTH_SECRET` with the output of `openssl rand -base64 32`) -->
+
 
 ### Development
 ```bash

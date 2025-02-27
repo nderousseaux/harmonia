@@ -6,6 +6,8 @@ import { fetchLessonById } from '@/app/lib/data';
 import { Tag } from '@/app/ui/lessons/lesson/tag';
 import { Player } from '@/app/ui/lessons/lesson/player';
 
+import { formatDuration } from '@/app/lib/utils';
+
 export const metadata: Metadata = {
   title: "A peaceful audio tracks for help you meditate",
   description: 'You can find here a peaceful audio of meditation audio tracks.',
@@ -30,7 +32,7 @@ export default async function Page(props: { params: Promise<{ id: string }> }) {
 						</h1>
 						<div className="w-2 h-2 bg-white rounded-full self-center translate-y-[2px]"></div>
 						<p className="text-xl font-semibold opacity-50 translate-y-[2px]">
-							{lesson.duration}
+							{formatDuration(lesson.duration)}
 						</p>
 					</div>
 
@@ -45,10 +47,9 @@ export default async function Page(props: { params: Promise<{ id: string }> }) {
 			</section>
 
 			<div className="space-y-10">
-
 				{/* Audio player */}
-				<section className="float-right ml-10 mb-10">
-					<Player />
+				<section className="float-right ml-10 mb-5">
+					<Player path={lesson.path} duration={lesson.duration} />
 				</section>
 
 				{/* Description */}
@@ -68,7 +69,7 @@ export default async function Page(props: { params: Promise<{ id: string }> }) {
 					</p>
 				</section>
 
-				{/* Comments */}
+				{/* Instructor */}
 				<section className="space-y-3">
 					<h2 className="font-semibold text-2xl">
 						À propos de l&apos;instructeur
@@ -91,7 +92,7 @@ export default async function Page(props: { params: Promise<{ id: string }> }) {
 							</p>
 						</div>
 					</div>
-				</section>				
+				</section>
 			</div>
 		
 		</main>

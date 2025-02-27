@@ -4,7 +4,6 @@ import {
   Tag
 } from './definitions';
 
-import { formatDuration } from './utils';
 
 const sql = postgres(process.env.POSTGRES_URL!, { ssl: 'require' });
 
@@ -19,7 +18,8 @@ export async function fetchLessonById(id: string) {
         lessons.title,
         lessons.description,
         lessons.duration,
-        lessons.is_read
+        lessons.is_read,
+        lessons.path
       FROM lessons
       WHERE lessons.id = ${id};
       `,
@@ -29,7 +29,6 @@ export async function fetchLessonById(id: string) {
 
     const lesson = lessonData.map((lesson) => ({
       ...lesson,
-      duration: formatDuration(lesson.duration.toString()),
       tags
     }));
 
@@ -44,20 +43,17 @@ export async function fetchLessonById(id: string) {
 
 export async function fetchLessons() {
   try {
-    const data = await sql<Lesson[]>`
+    const lessons = await sql<Lesson[]>`
       SELECT
         lessons.id,
         lessons.title,
         lessons.description,
         lessons.duration,
+        lessons.path,
         lessons.is_read
-      FROM lessons;
+      FROM lessons
+      ORDER BY lessons.id DESC;
     `;
-
-    const lessons = data.map((lesson) => ({
-      ...lesson,
-      duration: formatDuration(lesson.duration.toString())
-    }));
 
 
     return lessons;

@@ -2,8 +2,9 @@ export type Lesson = {
   id: string;
   title: string;
   description: string;
-  duration: number | string;
+  duration: number;
 	is_read: boolean;
+	path: string;
 	tags: string[];
 };
 

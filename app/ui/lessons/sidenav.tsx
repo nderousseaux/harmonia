@@ -22,7 +22,7 @@ export default async function SideNav() {
 
         <div className="overflow-y-auto h-full">
           {lessons.map((lesson, index) => (
-            <NavItem key={index} isFirst={index === 0} data={lesson} />
+            <NavItem key={index} isFirst={index === 0} lesson={lesson} />
           ))}
         </div>
 

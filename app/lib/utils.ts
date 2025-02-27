@@ -9,9 +9,8 @@ export function gaussianRandom(mean=0, stdev=1) {
 
 
 // Transform a number to a duration string (e.g. 1234 -> "20:34")
-export function formatDuration(duration: string ) {
-	const d = parseInt(duration);
-	const minutes = Math.floor(d / 60);
-	const seconds = d % 60;
+export function formatDuration(duration: number ) {
+	const minutes = Math.floor(duration / 60);
+	const seconds = duration % 60;
 	return `${minutes}:${seconds.toString().padStart(2, '0')}`;
 }
