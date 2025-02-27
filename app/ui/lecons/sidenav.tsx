@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import NavItem from '@/app/ui/lessons/nav-item';
+import NavItem from '@/app/ui/lecons/nav-item';
 import HarmoniaLogo from '@/app/ui/harmonia-logo';
 
 import { fetchLessons } from '@/app/lib/data';

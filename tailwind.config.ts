@@ -27,7 +27,7 @@ export default {
       },
       animation: {
         appear: "appear 2s ease-in-out",
-        underlineButton: "scalex 1.5s ease-in-out",
+        underlineButton: "scalex 2s ease-in-out",
       },
     },
   },

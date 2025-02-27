@@ -1,6 +1,6 @@
 import "@/app/ui/global.css";
 import { Metadata } from 'next';
-import SideNav from "@/app/ui/lessons/sidenav";
+import SideNav from "@/app/ui/lecons/sidenav";
 
 export const metadata: Metadata = {
   title: {

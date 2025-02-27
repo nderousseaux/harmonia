@@ -1,10 +1,10 @@
 import { Metadata } from 'next';
 import Image from 'next/image';
 
-import { MarkAsRead } from '@/app/ui/lessons/lesson/buttons';
+import { MarkAsRead } from '@/app/ui/lecons/lesson/buttons';
 import { fetchLessonById } from '@/app/lib/data';
-import { Tag } from '@/app/ui/lessons/lesson/tag';
-import { Player } from '@/app/ui/lessons/lesson/player';
+import { Tag } from '@/app/ui/lecons/lesson/tag';
+import { Player } from '@/app/ui/lecons/lesson/player';
 
 import { formatDuration } from '@/app/lib/utils';
 

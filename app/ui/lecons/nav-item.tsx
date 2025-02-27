@@ -23,7 +23,7 @@ export default function NavItem({ className, isFirst, lesson }: NavItemProps) {
 
   return (
     <Link 
-      href={`/lessons/${lesson.id}`}
+      href={`/lecons/${lesson.id}`}
       className={`${className}`}
     >
 

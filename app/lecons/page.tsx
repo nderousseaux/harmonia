@@ -4,7 +4,7 @@ export default function Page() {
       <div className="text-center max-w-screen-sm mx-auto text-xl space-y-10 text-stone-100">
 
         <h1 className="text-4xl">
-          Lessons
+          Leçons
         </h1>
 
       </div>
