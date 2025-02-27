@@ -77,10 +77,10 @@ export default async function Page(props: { params: Promise<{ id: string }> }) {
 					<div className="flex space-x-5">
 						<div className="aspect-square shrink-0">
 							<Image 
-								src="/pp.png"
+								src="/pp.jpeg"
 								alt="Marie Dupont"
-								width={90} height={90}
-								className="rounded-full"
+								width={400} height={400}
+								className="rounded-full w-[90px] h-[90px]"
 							/>
 						</div>
 						<div className="flex flex-col justify-center">

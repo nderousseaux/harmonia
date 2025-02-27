@@ -37,14 +37,12 @@ It use a PostgreSQL database, and a blob storage to store the audio files.
 This project implement the best practices of web app development : 
 - Nested routing
 - Server-side rendering (SSR)
-<!-- - Partial Pre-rendering -->
 - Dynamic rendering
-<!-- - Streaming -->
 <!-- - Responsive design -->
 <!-- - Loading skeleton -->
 - Images and fonts optimization
 - Handling errors (404, 500)
-<!-- - Mutating data, with refreshing the cache -->
+- Mutating data, with refreshing the cache
 <!-- - Accessibility -->
 <!-- - SEO optimization -->
 <!-- - Prepare to social sharing -->
