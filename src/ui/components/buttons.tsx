@@ -1,6 +1,6 @@
 import clsx from 'clsx';
-// import Link from 'next/link';
-import { TransitionLink } from '@/app/ui/TransitionLink';
+import Link from 'next/link';
+// import { TransitionLink } from '@/src/ui/TransitionLink';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 	children: React.ReactNode;
@@ -8,11 +8,11 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 	href?: string | undefined;
 }
 
-export function Button({ children, className, href }: ButtonProps) {
+export function UnderlineButton({ children, className, href }: ButtonProps) {
 	const stringHref = href || ''; 
 
 	return (
-		<TransitionLink
+		<Link
 			className={clsx(
 				className, 
 				'relative',
@@ -23,6 +23,6 @@ export function Button({ children, className, href }: ButtonProps) {
 			href={stringHref}
 		>
 			{children}
-		</TransitionLink>
+		</Link>
 	);
 }

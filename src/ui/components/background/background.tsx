@@ -1,17 +1,18 @@
 "use client";
 
+import { HTMLAttributes } from 'react';
 import clsx from 'clsx';
 import gsap from 'gsap';
-import { HTMLAttributes } from 'react';
 
-import { gaussianRandom } from '@/app/lib/utils';
+import styles from './background.module.css';
 
-import styles from '@/app/ui/background.module.css';
+import { gaussianRandom } from '@/src/lib/utils';
+
 
 const HAS_BUBBLES = false;
-
 const MEAN_OFFSET = 0.10;
 const MEAN_DURATION = 8;
+
 
 interface BackgroundProps extends HTMLAttributes<HTMLDivElement> {
 	className?: string;
@@ -24,6 +25,7 @@ interface AnimateOptions {
 	ease: string;
 	onComplete: () => void;
 }
+
 
 // Randomly animate bubbles, but keep them approximately at center
 function animateRandomly(element: HTMLElement, mean_offset: number = MEAN_OFFSET, mean_duration: number = MEAN_DURATION, start_x: number = 0, start_y: number = 0) {
@@ -41,6 +43,7 @@ function animateRandomly(element: HTMLElement, mean_offset: number = MEAN_OFFSET
 	gsap.to(element, options);
 }
 
+
 // Follow mouse with a bubble
 function followMouse(element: HTMLElement) {
 	document.addEventListener('mousemove', (e) => {
@@ -57,6 +60,7 @@ function followMouse(element: HTMLElement) {
 		});
 	});
 }
+
 
 export function Background({ className, ...rest }: BackgroundProps) {
 	return (

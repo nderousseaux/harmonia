@@ -1,30 +1,32 @@
-import "@/app/ui/global.css";
-import { primaryFont } from '@/app/ui/fonts';
 import { Metadata } from 'next';
-import { Background } from "@/app/ui/background"; 
 
+import "@/src/ui/global.css";
+
+import { Background } from "@/src/ui/components/background/background";
+import { primaryFont } from '@/src/ui/fonts';
+
+
+// Some metadata for the app
 export const metadata: Metadata = {
   title: {
-    template: '%s | Harmonia Meditation',
-    default: 'Harmonia Meditation',
+    template: '%s | Harmonia',
+    default: 'Harmonia',
   },
   description: 'A meditation app for relaxation and mindfulness.',
 };
 
-
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+// Main layout component
+export default function RootLayout({children}: { children: React.ReactNode; }) {
   return (
     <html lang="en">
       <body className={`${primaryFont.className} antialiased bg-gradient-to-br from-stone-600 to-stone-700`}>
+
         <div className="relative z-10">
           {children}
         </div>
 
         <Background/>
+
       </body>
     </html>
   );

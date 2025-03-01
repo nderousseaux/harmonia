@@ -1,25 +1,26 @@
 import { Metadata } from 'next';
 import Image from 'next/image';
 
-import { MarkAsRead } from '@/app/ui/lecons/lesson/buttons';
-import { fetchLessonById } from '@/app/lib/data';
-import { Tag } from '@/app/ui/lecons/lesson/tag';
-import { Player } from '@/app/ui/lecons/lesson/player';
+import { MarkAsRead } from '@/src/ui/components/lecons/mark-as-read';
+import { Player } from '@/src/ui/components/lecons/player';
+import { Tag } from '@/src/ui/components/lecons/tag';
+import { fetchLessonById } from '@/src/lib/data';
+import { formatDuration } from '@/src/lib/utils';
 
-import { formatDuration } from '@/app/lib/utils';
 
-export const metadata: Metadata = {
-  title: "A peaceful audio tracks for help you meditate",
-  description: 'You can find here a peaceful audio of meditation audio tracks.',
-};
+export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
+	const lesson = await fetchLessonById((await params).id);
+	return {
+		title: `${lesson.title} | Harmonia`,
+		description: lesson.description,
+	};
+}
 
-export default async function Page(props: { params: Promise<{ id: string }> }) {
-  const params = await props.params;
-  const id = params.id;
-
-	const lesson = await fetchLessonById(id);
+// Page for a single lesson
+export default async function Page(props: { params: { id: string } }) {
+	const lesson = await fetchLessonById((await props.params).id)
 	
-  return (		
+	return (    
 		<main className="h-full w-full space-y-10 text-white overflow-scroll pt-24 pb-10 px-32">
 
 			{/* Title and tag */}
@@ -35,7 +36,7 @@ export default async function Page(props: { params: Promise<{ id: string }> }) {
 						</p>
 					</div>
 
-					<MarkAsRead id={id} is_read={lesson.is_read} />
+					<MarkAsRead id={lesson.id} is_read={lesson.is_read} />
 				</div>
 
 				<div className="flex space-x-3">
@@ -95,5 +96,5 @@ export default async function Page(props: { params: Promise<{ id: string }> }) {
 			</div>
 		
 		</main>
-  );
+	);
 }

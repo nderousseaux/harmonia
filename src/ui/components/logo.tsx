@@ -1,6 +1,6 @@
-import { emphasisFont } from '@/app/ui/fonts';
+import { emphasisFont } from '@/src/ui/fonts';
 
-export default function HarmoniaLogo() {
+export default function Logo() {
   return (
 		<h1 className={`${emphasisFont.className} text-4xl text-stone-100`}>
 			Harmonia.

@@ -1,6 +1,6 @@
 import { CheckCircleIcon } from '@heroicons/react/24/outline';
 
-import { markAsRead } from '@/app/lib/actions';
+import { markAsRead } from '@/src/lib/actions';
 
 export function MarkAsRead({ id, is_read }: { id: string, is_read: boolean }) {
   const MarkAsRead = markAsRead.bind(null, id, is_read);
