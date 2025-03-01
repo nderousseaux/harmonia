@@ -8,7 +8,7 @@ import { fetchLessonById } from '@/src/lib/data';
 import { formatDuration } from '@/src/lib/utils';
 
 
-export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
 	const lesson = await fetchLessonById((await params).id);
 	return {
 		title: `${lesson.title} | Harmonia`,
@@ -16,8 +16,9 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
 	};
 }
 
+
 // Page for a single lesson
-export default async function Page(props: { params: { id: string } }) {
+export default async function Page(props: { params: Promise<{ id: string }> }) {
 	const lesson = await fetchLessonById((await props.params).id)
 	
 	return (    
