@@ -1,10 +1,10 @@
 import * as motion from 'motion/react-client';
 import { Metadata } from 'next';
 import { Suspense } from 'react';
+import Link from 'next/link';
 
 import "@/src/ui/global.css";
 import Logo from '@/src/ui/components/logo';
-import { TLink } from '@/src/ui/components/t-link';
 import LeconsList, { LeconsListSkeleton } from '@/src/ui/components/nav/lecons-list';
 
 // Some metadata
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 
 // Navigation sidebar
-export default async function Layout({ children }: { children: React.ReactNode; }) {
+export default function Layout({ children }: { children: React.ReactNode; }) {
   return (
     <div className="flex h-screen">
 
@@ -25,12 +25,12 @@ export default async function Layout({ children }: { children: React.ReactNode; 
         transition={{ duration: 1 }}
 				className="w-96 flex-none h-full flex-col pt-4 gap-4 bg-slate-700 bg-opacity-45"
 			>
-				<TLink
+				<Link
 					className="flex items-center justify-center h-32 shrink-0"
 					href="/"
 				>
 						<Logo />
-				</TLink>
+				</Link>
 				<div className="h-full">
 					<h2 className="text-white opacity-50 text-sm uppercase font-semibold ml-4 mb-3">
 						Mes leçons

@@ -2,9 +2,8 @@
 
 import { usePathname } from 'next/navigation';
 import { motion } from 'motion/react';
+import Link from 'next/link';
 
-import { shrimmer } from '@/src/ui/components/loading';
-import { TLink } from '@/src/ui/components/t-link';
 import { Lesson } from '@/src/lib/definitions';
 import { formatDuration } from "@/src/lib/utils";
 
@@ -31,10 +30,10 @@ export default function NavItem({ className, isFirst, lesson }: NavItemProps) {
   const pathname = usePathname();
 
   return (
-  <TLink 
+  <Link 
     href={`/lecons/${lesson.id}`}
     className={`${className} relative`} // Add relative positioning here
-    elementTransition='main'
+    // elementTransition='main'
   >
 
     {/* Delimiter if is not first */}
@@ -77,7 +76,7 @@ export default function NavItem({ className, isFirst, lesson }: NavItemProps) {
     </div>
 
     <Delimiter />
-  </TLink>
+  </Link>
   );
 }
 
@@ -89,7 +88,7 @@ export function NavItemSkeleton({ isFirst }: { isFirst?: boolean }) {
     {/* Delimiter if is not first */}
     { isFirst && <Delimiter /> }
     
-    <div className={`${shrimmer} flex p-4 relative`}>
+    <div className='flex p-4 relative animate-pulse'>
       {/* Left */}
       <div className="h-full w-full flex flex-col justify-center gap-3">
         <div className="w-48 h-6 bg-slate-700 bg-opacity-45 rounded-xl"></div>
