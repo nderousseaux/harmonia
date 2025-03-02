@@ -2,7 +2,6 @@
 
 import clsx from 'clsx';
 import { useEffect, useState } from 'react';
-import Link from 'next/link'
 import { TLink } from '@/src/ui/components/t-link';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
