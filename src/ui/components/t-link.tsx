@@ -21,7 +21,7 @@ export const TLink: React.FC<TLinkProps> = ({
   children,
   href,
   className,
-  time = 500,
+  time = 1000,
   classTransition = 'animate-disappear',
   elementTransition = 'body > div',
   ...props
