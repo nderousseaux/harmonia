@@ -1,4 +1,3 @@
-import { appendFile } from "fs";
 import type { Config } from "tailwindcss";
 
 export default {
@@ -15,24 +14,18 @@ export default {
         foreground: "var(--foreground)",
       },
       keyframes: {
-        appear: {
-          "0%": { opacity: '0' },
-          "100%": { opacity: '1' },
-        },
-        disappear: {
-          "0%": { opacity: '1' },
-          "100%": { opacity: '0' },
-        },
         scalex: {
           "0%": { transform: "scaleX(0)" },
           "100%": { transform: "scaleX(1)" },
         },
+        disappear: {
+          "0%": { opacity: "1" }, 
+          "100%": { opacity: "0" },
+        },
       },
       animation: {
-        longAppear: "appear 2s ease-in-out",
-        appear: "appear 0.5s ease-in-out",
-        disappear: "disappear 0.5s ease-in-out",
         underlineButton: "scalex 2s ease-in-out",
+        disappear: "disappear 1s ease-in-out",
       },
     },
   },

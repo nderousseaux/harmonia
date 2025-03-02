@@ -1,5 +1,6 @@
-import { Metadata } from 'next';
+import * as motion from 'motion/react-client';
 import Link from 'next/link';
+import { Metadata } from 'next';
 
 import "@/src/ui/global.css";
 import Logo from '@/src/ui/components/logo';
@@ -20,9 +21,14 @@ export default async function Layout({ children }: { children: React.ReactNode; 
 	const lessons = await fetchLessons();
 
   return (
-    <div className="flex h-screen animate-appear">
+    <div className="flex h-screen">
 
-      <nav className="w-96 flex-none h-full flex-col pt-4 gap-4 bg-slate-700 bg-opacity-45">
+      <motion.nav
+				initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+				className="w-96 flex-none h-full flex-col pt-4 gap-4 bg-slate-700 bg-opacity-45"
+			>
 				<Link
 					className="flex items-center justify-center h-32 shrink-0"
 					href="/"
@@ -40,11 +46,16 @@ export default async function Layout({ children }: { children: React.ReactNode; 
 						))}
 					</div>
 				</div>
-      </nav>
+      </motion.nav>
 
-      <div className="flex-grow">
+      <motion.div
+				className="flex-grow"
+				initial={{ opacity: 0 }}
+				animate={{ opacity: 1 }}
+				transition={{ duration: 1, delay: 0.5 }}
+			>
 				{children}
-			</div>
+			</motion.div>
 
     </div>
   );

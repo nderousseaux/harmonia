@@ -36,14 +36,15 @@ export const TLink: React.FC<TLinkProps> = ({
     // Select first div under body
     const div = document.querySelector(elementTransition);
     if (!div) {
+      router.push(href);
       return;
     }
+    
+    // Add a class to body
+    div.classList.add(classTransition);
 
-		// Add a class to body
-		div.classList.add(classTransition);
-
-		// Wait for the transition to finish
-		await sleep(time);
+    // Wait for the transition to finish
+    await sleep(time);
 
     await router.push(href);
 

@@ -20,6 +20,8 @@
 Harmonia is a web app that helps you relax with sophrology exercises. It permit you to listen to audio exercises and follow the instructions to relax. It is built with Next.js, Tailwind CSS and Vercel. 
 It use a PostgreSQL database, and a blob storage to store the audio files.
 
+Some GSAP and Framer Motion animations are used to make the app more dynamic.
+
 <!-- <p align="center">
 	<img src="docs/img/dashboard.png" alt="Dashboard" width="1000"/>
 </p> -->
