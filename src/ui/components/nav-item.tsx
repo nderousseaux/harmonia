@@ -1,7 +1,7 @@
 'use client';
 
 import { usePathname } from 'next/navigation';
-import Link from 'next/link';
+import { TLink } from './t-link';
 
 import { formatDuration } from "@/src/lib/utils";
 import { Lesson } from '@/src/lib/definitions';
@@ -29,9 +29,10 @@ export default function NavItem({ className, isFirst, lesson }: NavItemProps) {
   const pathname = usePathname();
 
   return (
-    <Link 
+    <TLink 
       href={`/lecons/${lesson.id}`}
       className={`${className}`}
+      elementTransition='main'
     >
 
       {/* Delimiter if is not first */}
@@ -69,6 +70,6 @@ export default function NavItem({ className, isFirst, lesson }: NavItemProps) {
       </div>
 
       <Delimiter />
-    </Link>
+    </TLink>
   );
 }

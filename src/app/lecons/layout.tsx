@@ -20,7 +20,7 @@ export default async function Layout({ children }: { children: React.ReactNode; 
 	const lessons = await fetchLessons();
 
   return (
-    <div className="flex h-screen">
+    <div className="flex h-screen animate-appear">
 
       <nav className="w-96 flex-none h-full flex-col pt-4 gap-4 bg-slate-700 bg-opacity-45">
 				<Link

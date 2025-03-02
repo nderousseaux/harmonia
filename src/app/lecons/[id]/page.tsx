@@ -22,7 +22,7 @@ export default async function Page(props: { params: Promise<{ id: string }> }) {
 	const lesson = await fetchLessonById((await props.params).id)
 	
 	return (    
-		<main className="h-full w-full space-y-10 text-white overflow-scroll pt-24 pb-10 px-32">
+		<main className="h-full w-full space-y-10 text-white overflow-scroll pt-24 pb-10 px-32 animate-appear">
 
 			{/* Title and tag */}
 			<section className="space-y-3">
