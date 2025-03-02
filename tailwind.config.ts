@@ -22,6 +22,12 @@ export default {
           "0%": { opacity: "1" }, 
           "100%": { opacity: "0" },
         },
+        shimmer: {
+          '100%': {
+            transform: 'translateX(100%)',
+          },
+        },
+
       },
       animation: {
         underlineButton: "scalex 2s ease-in-out",

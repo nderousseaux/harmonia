@@ -1,12 +1,11 @@
 import * as motion from 'motion/react-client';
 import { Metadata } from 'next';
+import { Suspense } from 'react';
 
 import "@/src/ui/global.css";
 import Logo from '@/src/ui/components/logo';
-import NavItem from '@/src/ui/components/nav-item';
 import { TLink } from '@/src/ui/components/t-link';
-
-import { fetchLessons } from '@/src/lib/data';
+import LeconsList, { LeconsListSkeleton } from '@/src/ui/components/nav/lecons-list';
 
 // Some metadata
 export const metadata: Metadata = {
@@ -17,9 +16,6 @@ export const metadata: Metadata = {
 
 // Navigation sidebar
 export default async function Layout({ children }: { children: React.ReactNode; }) {
-
-	const lessons = await fetchLessons();
-
   return (
     <div className="flex h-screen">
 
@@ -40,11 +36,9 @@ export default async function Layout({ children }: { children: React.ReactNode; 
 						Mes leçons
 					</h2>
 
-					<div className="overflow-y-auto h-full">
-						{lessons.map((lesson, index) => (
-							<NavItem key={index} isFirst={index === 0} lesson={lesson} />
-						))}
-					</div>
+					<Suspense fallback={<LeconsListSkeleton />}>
+						<LeconsList />
+					</Suspense>
 				</div>
       </motion.nav>
 
