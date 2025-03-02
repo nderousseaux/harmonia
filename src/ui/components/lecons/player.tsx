@@ -85,7 +85,7 @@ export function Player({ className, path, duration }: PlayerProps) {
 
       {/* // Audio player */}
       <audio ref={audioRef} className='hidden' controls>
-        <source src={path}/>
+        {/* <source src={path}/> */}
         Your browser does not support the audio element.
       </audio>
     </div>

@@ -1,10 +1,10 @@
 import * as motion from 'motion/react-client';
-import Link from 'next/link';
 import { Metadata } from 'next';
 
 import "@/src/ui/global.css";
 import Logo from '@/src/ui/components/logo';
 import NavItem from '@/src/ui/components/nav-item';
+import { TLink } from '@/src/ui/components/t-link';
 
 import { fetchLessons } from '@/src/lib/data';
 
@@ -29,12 +29,12 @@ export default async function Layout({ children }: { children: React.ReactNode; 
         transition={{ duration: 1 }}
 				className="w-96 flex-none h-full flex-col pt-4 gap-4 bg-slate-700 bg-opacity-45"
 			>
-				<Link
+				<TLink
 					className="flex items-center justify-center h-32 shrink-0"
 					href="/"
 				>
 						<Logo />
-				</Link>
+				</TLink>
 				<div className="h-full">
 					<h2 className="text-white opacity-50 text-sm uppercase font-semibold ml-4 mb-3">
 						Mes leçons
