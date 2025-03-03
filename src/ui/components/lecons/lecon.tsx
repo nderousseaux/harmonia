@@ -21,9 +21,9 @@ export default async function Lecon(props: { params: Promise<{ id: string }> }) 
 
 	return (
 		<motion.main
-						initial={{ opacity: 0 }}
-						animate={{ opacity: 1 }}
-						transition={{ duration: 3 }}
+						initial={{ opacity: 0, y: -10 }}
+						animate={{ opacity: 1, y: 0 }}
+						transition={{ duration: 1 }}
 		>
 			{/* Title and tag */}
 			<section className="space-y-3">
@@ -105,7 +105,7 @@ export function LeconSkeleton() {
 		<motion.main
 			initial={{ opacity: 0 }}
 			animate={{ opacity: 1 }}
-			transition={{ duration: 3 }}
+			transition={{ duration: 1 }}
 			className="space-y-10 animate-pulse"
 		>
 			{/* Title and tag */}

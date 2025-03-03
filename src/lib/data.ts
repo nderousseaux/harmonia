@@ -1,3 +1,5 @@
+'use server';
+
 import postgres from 'postgres';
 import {
   Lesson,
@@ -25,9 +27,6 @@ export async function fetchLessonById(id: string) {
       `,
       fetchTagsByLesson(id)
     ]);
-
-    // Wait 10 seconds
-    await new Promise((resolve) => setTimeout(resolve, 2000));
 
     const lesson = lessonData.map((lesson) => ({
       ...lesson,
@@ -57,8 +56,6 @@ export async function fetchLessons() {
       ORDER BY lessons.id DESC;
     `;
 
-    // Wait 10 seconds
-    await new Promise((resolve) => setTimeout(resolve, 2000));
 
     return lessons;
   }

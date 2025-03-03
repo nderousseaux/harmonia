@@ -32,8 +32,7 @@ export default function NavItem({ className, isFirst, lesson }: NavItemProps) {
   return (
   <Link 
     href={`/lecons/${lesson.id}`}
-    className={`${className} relative`} // Add relative positioning here
-    // elementTransition='main'
+    className={`${className} relative`}
   >
 
     {/* Delimiter if is not first */}
@@ -71,7 +70,6 @@ export default function NavItem({ className, isFirst, lesson }: NavItemProps) {
         animate={{ opacity: pathname.includes(lesson.id) ? 1 : 0 }}
         transition={{ duration: 0.5 }}
       />
-    
 
     </div>
 
