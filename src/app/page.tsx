@@ -1,26 +1,35 @@
+'use client';
+
 import * as motion from 'motion/react-client';
-import Link from 'next/link';
-import React from 'react';
+import React, { useState } from 'react';
 
 import { UnderlineLabel } from '@/src/ui/components/labels';
 import Logo from '@/src/ui/components/logo';
 
-
 // Root page
 export default function Page() {
+  const [isExiting, setIsExiting] = useState(false);
+
+  const handleStart = () => {
+    setIsExiting(true);
+    setTimeout(() => {
+      window.location.href = '/lecons';
+    }, 500);
+  };
+
   return (
     <motion.main
       key="/"
       initial={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: 10 }}
+      animate={{ opacity: isExiting ? 0 : 1, y: isExiting ? 10 : 0 }}
       transition={{ duration: 0.5 }}
       className="flex min-h-screen flex-col p-6 items-center justify-center main"
     >
       <div className="text-center max-w-screen-sm mx-auto text-xl space-y-10 text-stone-100">
         <motion.div
-        initial={{ opacity: 0, y: -10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 2, delay: 0 }}
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 2, delay: 0 }}
         >
           <Logo />
         </motion.div>
@@ -38,10 +47,11 @@ export default function Page() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 2, delay: 1 }}
         >
-
-          <Link href="/lecons">
-            <UnderlineLabel> Commencer </UnderlineLabel>
-          </Link>
+          <a onClick={handleStart}>
+            <UnderlineLabel  style={{ cursor: 'pointer' }}>
+              Commencer
+            </UnderlineLabel>
+          </a>
         </motion.div>
       </div>
     </motion.main>
