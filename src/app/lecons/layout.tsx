@@ -5,6 +5,7 @@ import { Metadata } from 'next';
 
 import LeconsList, { LeconsListSkeleton } from '@/src/ui/components/nav/lecons-list';
 import Logo from '@/src/ui/components/logo';
+import PageAnimatePresence from '@/src/ui/components/page-animate-presence';
 
 
 // Some metadata
@@ -46,7 +47,9 @@ export default async function Layout({ children }: { children: React.ReactNode }
 				transition={{ duration: 0.5, delay: 0.5 }}
 				className="flex-grow"
 			>
-				{children}
+				<PageAnimatePresence>
+					{children}
+				</PageAnimatePresence>
 			</motion.div>
 		</div>
 	);

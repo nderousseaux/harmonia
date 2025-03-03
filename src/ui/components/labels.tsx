@@ -3,13 +3,12 @@
 import clsx from 'clsx';
 import { useEffect, useState } from 'react';
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface UnderLineLabelProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 	children: React.ReactNode;
 	className?: string;
-	props?: any;
 }
 
-export function UnderlineLabel({ children, className, ...props }: ButtonProps) {
+export function UnderlineLabel({ children, className }: UnderLineLabelProps) {
 	const classButton = clsx(
 	'before:content-[""] before:block before:w-full before:h-px before:bg-current before:absolute before:bottom-0 before:left-0',
 	'before:transition-transform before:duration-1000 before:[transform-origin:0%_50%] before:animate-underlineButton',
@@ -28,13 +27,13 @@ export function UnderlineLabel({ children, className, ...props }: ButtonProps) {
 
 	return (
 		<button
-		className={clsx(
-			className, 
-			'relative',
-			{ [classButton]: isClassAssigned }
-		)}
-	>
-		{children}
-	</button>
+			className={clsx(
+				className, 
+				'relative',
+				{ [classButton]: isClassAssigned }
+			)}
+		>
+			{children}
+		</button>
 	);
 }
