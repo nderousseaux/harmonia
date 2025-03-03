@@ -27,7 +27,7 @@ export default function PageAnimatePresence(
         key={pathname}
         initial={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: 10 }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 1 }}
       >
         {/* {children} */}
         <FrozenRoute>{children}</FrozenRoute>

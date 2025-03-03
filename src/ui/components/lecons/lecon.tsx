@@ -21,9 +21,9 @@ export default async function Lecon(props: { params: Promise<{ id: string }> }) 
 
 	return (
 		<motion.main
-						initial={{ opacity: 0, y: -10 }}
-						animate={{ opacity: 1, y: 0 }}
-						transition={{ duration: 1 }}
+			initial={{ opacity: 0, y: -10 }}
+			animate={{ opacity: 1, y: 0 }}
+			transition={{ duration: 1 }}
 		>
 			{/* Title and tag */}
 			<section className="space-y-3">
@@ -97,47 +97,5 @@ export default async function Lecon(props: { params: Promise<{ id: string }> }) 
 				</section>
 			</div>
 		</motion.main>
-	)
-}
-
-export function LeconSkeleton() {
-	return (
-		<main
-			className="space-y-10 animate-pulse"
-		>
-			{/* Title and tag */}
-			<section className="space-y-3">
-				<div className="w-96 h-8 bg-slate-700 opacity-45 rounded-xl"></div>
-				
-				<div className="flex space-x-3">
-					<div className="w-24 h-6 bg-slate-700 opacity-45 rounded-xl"></div>
-					<div className="w-24 h-6 bg-slate-700 opacity-45 rounded-xl"></div>
-					<div className="w-24 h-6 bg-slate-700 opacity-45 rounded-xl"></div>
-				</div>
-			</section>
-
-			<section className="flex space-x-10">
-				<div className="w-full space-y-10">
-					<div className="h-52 bg-slate-700 opacity-45 rounded-xl"></div>
-					<div className="h-52 bg-slate-700 opacity-45 rounded-xl"></div>
-				</div>
-
-				<div className="w-80 h-96 bg-slate-700 opacity-45 rounded-xl"></div>
-			</section>
-
-			{/* Instructor */}
-			<section className="space-y-3">
-				<div className="w-96 h-8 bg-slate-700 opacity-45 rounded-xl"></div>
-				<div className="flex space-x-5">
-					<div className="aspect-square shrink-0">
-						<div className="w-20 h-20 bg-slate-700 opacity-45 rounded-full"></div>
-					</div>
-					<div className="flex flex-col justify-center space-y-2">
-						<div className="w-32 h-6 bg-slate-700 opacity-45 rounded-xl"></div>
-						<div className="w-96 h-6 bg-slate-700 opacity-45 rounded-xl"></div>
-					</div>
-				</div>
-			</section>
-		</main>
 	)
 }

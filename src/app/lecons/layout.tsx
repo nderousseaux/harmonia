@@ -22,7 +22,7 @@ export default async function Layout({ children }: { children: React.ReactNode }
 			<motion.nav 
 				initial={{ opacity: 0, y: -10 }}
 				animate={{ opacity: 1, y: -5 }}
-				transition={{ duration: 0.5 }}
+				transition={{ duration: 1 }}
 				className="w-96 flex-none h-[110%] flex-col pt-4 gap-4 bg-slate-700 bg-opacity-45"
 			>
 				<Link href="/"
@@ -44,7 +44,7 @@ export default async function Layout({ children }: { children: React.ReactNode }
 			<motion.div 
 				initial={{ opacity: 0, y: -10 }}
 				animate={{ opacity: 1, y: 0 }}
-				transition={{ duration: 0.5, delay: 0.5 }}
+				transition={{ duration: 1, delay: 0.5 }}
 				className="flex-grow"
 			>
 				<PageAnimatePresence>

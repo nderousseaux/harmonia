@@ -68,7 +68,7 @@ export default function NavItem({ className, isFirst, lesson }: NavItemProps) {
         style={{ background: 'radial-gradient(at center top, rgba(191,230,134,0.30), rgba(255,255,255,0) 70%)' }}
         initial={{ opacity: 0 }}
         animate={{ opacity: pathname.includes(lesson.id) ? 1 : 0 }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 1 }}
       />
 
     </div>
