@@ -6,6 +6,7 @@ import "@/src/ui/global.css";
 import Logo from '@/src/ui/components/logo';
 import NavItem from '@/src/ui/components/nav/nav-item';
 import { fetchLessons } from '@/src/lib/data';
+import PageAnimatePresence from '@/src/ui/components/page-animate-presence';
 
 
 // Some metadata
@@ -52,7 +53,9 @@ export default async function Layout({ children }: { children: React.ReactNode; 
 				transition={{ duration: 0.5, delay: 0.5 }}
 				className="flex-grow"
 			>
-				{children}
+				<PageAnimatePresence>
+					{children}
+				</PageAnimatePresence>
 			</motion.div>
 
     </div>
