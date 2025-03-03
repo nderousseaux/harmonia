@@ -30,19 +30,19 @@ export default function Layout({ children }: { children: React.ReactNode; }) {
 		<AnimatePresence mode="wait">
 			{ show && <motion.div
 				key="/lecons"
-				initial={{ opacity: 1, y: 0 }}
-				exit={{ opacity: 0, y: 10 }}
+				initial={{ opacity: 1, y: -5 }}
+				exit={{ opacity: 0, y: 5 }}
 				transition={{ duration: 0.5 }}
 				className="flex h-screen"
 			>
 				<motion.nav 
 					initial={{ opacity: 0, y: -10 }}
-					animate={{ opacity: 1, y: 0 }}
+					animate={{ opacity: 1, y: -5 }}
 					transition={{ duration: 0.5 }}
 					className="w-96 flex-none h-[110%] flex-col pt-4 gap-4 bg-slate-700 bg-opacity-45"
 				>
 					<div
-						className="flex items-center justify-center h-32 shrink-0 cursor-pointer"
+						className="flex items-center justify-center h-32 shrink-0 cursor-pointer pt-[5px]"
 						onClick={clickLogo}
 					>
 							<Logo />
