@@ -26,8 +26,8 @@ export default function PageAnimatePresence(
       <motion.div 
         key={pathname}
         initial={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -200 }}
-        transition={{ duration: 1 }}
+        exit={{ opacity: 0, y: 10 }}
+        transition={{ duration: 0.5 }}
       >
         {/* {children} */}
         <FrozenRoute>{children}</FrozenRoute>
