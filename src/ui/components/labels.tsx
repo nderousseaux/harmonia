@@ -2,17 +2,14 @@
 
 import clsx from 'clsx';
 import { useEffect, useState } from 'react';
-import Link from 'next/link';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 	children: React.ReactNode;
 	className?: string;
-	href?: string | undefined;
+	props?: any;
 }
 
-export function UnderlineButton({ children, className, href }: ButtonProps) {
-	const stringHref = href || ''; 
-
+export function UnderlineLabel({ children, className, ...props }: ButtonProps) {
 	const classButton = clsx(
 	'before:content-[""] before:block before:w-full before:h-px before:bg-current before:absolute before:bottom-0 before:left-0',
 	'before:transition-transform before:duration-1000 before:[transform-origin:0%_50%] before:animate-underlineButton',
@@ -30,15 +27,14 @@ export function UnderlineButton({ children, className, href }: ButtonProps) {
 	}, []);
 
 	return (
-		<Link
+		<button
 		className={clsx(
 			className, 
 			'relative',
 			{ [classButton]: isClassAssigned }
 		)}
-		href={stringHref}
 	>
 		{children}
-	</Link>
+	</button>
 	);
 }

@@ -1,3 +1,11 @@
+import { Metadata } from 'next';
+
+// Some metadata
+export const metadata: Metadata = {
+  title: "Leçons",
+  description: 'You can find here a peaceful gallery of meditation audio tracks.'
+};
+
 // Home page
 export default function Page() {
   return (
