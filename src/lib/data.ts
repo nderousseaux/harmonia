@@ -32,8 +32,6 @@ export async function fetchLessonById(id: string) {
       ...lesson,
       tags
     }));
-    // Wait 10 seconds
-    await new Promise((resolve) => setTimeout(resolve, 1000));
 
 
     return lesson[0];
