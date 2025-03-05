@@ -1,7 +1,7 @@
-import { motion } from 'motion/react';
+import * as motion from 'motion/react-client';
+import Link from 'next/link';
 
 import { UnderlineLabel } from '@/src/ui/components/labels';
-import Link from 'next/link';
  
 export default function NotFound() {
   return (
@@ -19,13 +19,13 @@ export default function NotFound() {
 				</div>
 
 				<div>
-					<p>La page que vous recherchez n'existe pas.</p>
+					<p>La page que vous recherchez n&apos;existe pas.</p>
 				</div>
 
 				<div>
 					<Link href="/lecons">
 						<UnderlineLabel  style={{ cursor: 'pointer' }}>
-							Retour à l'accueil
+							Retour à l&apos;accueil
 						</UnderlineLabel>
 					</Link>
 				</div>

@@ -32,7 +32,7 @@ export default function Error({
         <div>
           <Link href="/lecons">
             <UnderlineLabel  style={{ cursor: 'pointer' }}>
-              Retour à l'accueil
+              Retour à l&apos;accueil
             </UnderlineLabel>
           </Link>
         </div>
