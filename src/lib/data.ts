@@ -13,7 +13,7 @@ const sql = postgres(process.env.POSTGRES_URL!, { ssl: 'require' });
 export async function fetchLessonById(id: string) {
   try {
 
-    const [lessonData, tags] = await Promise.all([
+    const [data, tags] = await Promise.all([
       sql<Lesson[]>`
       SELECT
         lessons.id,
@@ -28,7 +28,7 @@ export async function fetchLessonById(id: string) {
       fetchTagsByLesson(id)
     ]);
 
-    const lesson = lessonData.map((lesson) => ({
+    const lesson = data.map((lesson) => ({
       ...lesson,
       tags
     }));
