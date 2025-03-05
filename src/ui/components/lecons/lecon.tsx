@@ -1,6 +1,7 @@
+import * as motion from 'motion/react-client';
 import Image from 'next/image';
 import { Metadata } from 'next';
-import * as motion from 'motion/react-client';
+import { notFound } from 'next/navigation';
 
 import { MarkAsRead } from '@/src/ui/components/lecons/mark-as-read';
 import { Player } from '@/src/ui/components/lecons/player';
@@ -18,6 +19,10 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
 
 export default async function Lecon(props: { params: Promise<{ id: string }> }) {
 	const lesson = await fetchLessonById((await props.params).id)
+
+	if (!lesson) {
+		notFound();
+	}
 
 	return (
 		<motion.main
