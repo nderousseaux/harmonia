@@ -31,7 +31,7 @@ export default async function Page(props: { params: Promise<{ id: string }> }) {
 			initial={{ opacity: 0, y: -10 }}
 			animate={{ opacity: 1, y: 0 }}
 			transition={{ duration: 1 }}
-			className="h-full w-full space-y-10 text-white overflow-scroll pt-24 pb-10 px-32"
+			className="h-full w-full space-y-10 text-white pt-24 pb-10 px-32"
 		>
 			
 			<Suspense fallback={""}>

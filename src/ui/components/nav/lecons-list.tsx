@@ -9,7 +9,6 @@ export default async function LeconsList() {
   return (
 		
     <motion.div 
-			className="overflow-y-auto h-full"
 			initial={{ opacity: 0, y: -10 }}
 			animate={{ opacity: 1, y: 0 }}
 			transition={{ duration: 1 }}
@@ -23,7 +22,7 @@ export default async function LeconsList() {
 
 export async function LeconsListSkeleton() {
   return (
-    <div className="overflow-y-auto h-full">
+    <div>
       {Array.from(Array(5).keys()).map((index) => (
         <NavItemSkeleton key={index} isFirst={index === 0} />
       ))}
