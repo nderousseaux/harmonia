@@ -42,16 +42,13 @@ export default async function Layout({ children }: { children: React.ReactNode }
 				</div>
 			</motion.nav>
 
-			<motion.div 
-				initial={{ opacity: 0, y: -10 }}
-				animate={{ opacity: 1, y: 0 }}
-				transition={{ duration: 1, delay: 0.5 }}
+			<div 
 				className="lg:flex-grow overflow-y-scroll"
 			>
 				<PageAnimatePresence>
 					{children}
 				</PageAnimatePresence>
-			</motion.div>
+			</div>
 		</div>
 	);
 }
