@@ -44,7 +44,7 @@ export default async function Layout({ children }: { children: React.ReactNode }
 				initial={{ opacity: 0, y: -10 }}
 				animate={{ opacity: 1, y: 0 }}
 				transition={{ duration: 1, delay: 0.5 }}
-				className="lg:flex-grow"
+				className="lg:flex-grow overflow-y-auto max-h-[calc(100vh-3rem)]"
 			>
 				<PageAnimatePresence>
 					{children}

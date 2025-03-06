@@ -1,14 +1,16 @@
-import * as motion from 'motion/react-client';
+import * as motion from 'motion/react-client'; 
 import Image from 'next/image';
+import Link from 'next/link';
 import { Metadata } from 'next';
 import { Suspense } from 'react';
 import { notFound } from 'next/navigation';
+import { ArrowLeftIcon } from '@heroicons/react/24/outline';
 
-import { MarkAsRead } from '@/src/ui/components/lecons/mark-as-read';
 import { Player } from '@/src/ui/components/lecons/player';
 import { Tag } from '@/src/ui/components/lecons/tag';
 import { formatDuration } from '@/src/lib/utils';
 import { fetchLessonById } from '@/src/lib/data';
+
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
 	const lesson = await fetchLessonById((await params).id);
@@ -26,12 +28,12 @@ export default async function Page(props: { params: Promise<{ id: string }> }) {
 		notFound();
 	}
 
-	return (    
+	return (
 		<motion.main
 			initial={{ opacity: 0, y: -10 }}
 			animate={{ opacity: 1, y: 0 }}
 			transition={{ duration: 1 }}
-			className="h-full w-full space-y-10 text-white pt-24 pb-10 px-32"
+			className="h-full w-full space-y-10 text-white xl:px-32 p-10"
 		>
 			
 			<Suspense fallback={""}>
@@ -39,24 +41,35 @@ export default async function Page(props: { params: Promise<{ id: string }> }) {
 					initial={{ opacity: 0, y: -10 }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 1 }}
+					className="space-y-5"
 				>
+					{/* Back arrow for mobile view */}
+					<div className="block lg:hidden">
+						<Link
+							href="/lecons"
+							className="flex items-center space-x-2 text-lg"
+						>
+							<ArrowLeftIcon className="w-6 h-6" />
+						</Link>
+					</div>
+
 					{/* Title and tag */}
-					<section className="space-y-3">
+					<section className="space-y-5 xl:space-y-3 pb-5">
 						<div className="flex justify-between items-center">
 		
-							<div className="flex items-center space-x-3">
-								<h1 className="font-semibold text-3xl">
-									{lesson.title} -
+							<div className="flex items-center space-x-3 text-2xl lg:text-3xl">
+								<h1 className="font-semibold">
+									{lesson.title}
 								</h1>
-								<p className="text-xl font-semibold opacity-50 translate-y-[2px]">
+								<span className="block">-</span>
+								<p className="font-semibold opacity-50 translate-y-[2px] text-xl">
 									{formatDuration(lesson.duration)}
 								</p>
 							</div>
 		
-							<MarkAsRead id={lesson.id} is_read={lesson.is_read} />
 						</div>
 		
-						<div className="flex space-x-3">
+						<div className="flex-wrap flex gap-2">
 							{lesson.tags.map((tag, index) => (
 								<Tag key={index} content={tag} />
 							))}
@@ -65,7 +78,7 @@ export default async function Page(props: { params: Promise<{ id: string }> }) {
 		
 					<div className="space-y-10">
 						{/* Audio player */}
-						<section className="float-right ml-10 mb-5">
+						<section className="w-full flex justify-center lg:float-right lg:ml-10 lg:mb-5 lg:w-auto">
 							<Player path={lesson.path} duration={lesson.duration} />
 						</section>
 		

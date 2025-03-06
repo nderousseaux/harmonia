@@ -53,7 +53,7 @@ export function Player({ className, path, duration }: PlayerProps) {
   }, []);
 
   return (
-    <div className={clsx(className, "relative z-50 flex flex-col items-center justify-center gap-5 rounded-lg pt-8 overflow-hidden bg-slate-700 bg-opacity-45 w-72")}>
+    <div className={clsx(className, "relative z-50 flex flex-col items-center justify-center gap-5 rounded-lg pt-8 overflow-hidden bg-slate-700 bg-opacity-45 w-full lg:w-72")}>
       <div className='w-full h-44' ref={orbRef}>
         <Orb hoverIntensity={0.5} rotateOnHover={true} hue={70} />
       </div>
