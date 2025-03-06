@@ -64,7 +64,7 @@ export default function NavItem({ className, isFirst, lesson }: NavItemProps) {
 
       
       <motion.div
-        className="absolute top-0 left-0 w-full h-full z-1"
+        className="absolute top-0 left-0 w-full h-full z-1 hidden lg:block"
         style={{ background: 'radial-gradient(at center top, rgba(191,230,134,0.30), rgba(255,255,255,0) 70%)' }}
         initial={{ opacity: 0 }}
         animate={{ opacity: pathname.includes(lesson.id) ? 1 : 0 }}

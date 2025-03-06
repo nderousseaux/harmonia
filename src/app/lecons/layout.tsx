@@ -18,12 +18,12 @@ export const metadata: Metadata = {
 export default async function Layout({ children }: { children: React.ReactNode }) {
 
 	return (
-		<div className="flex h-screen">
+		<div className="flex h-screen flex-col lg:flex-row">
 			<motion.nav 
 				initial={{ opacity: 0, y: -10 }}
 				animate={{ opacity: 1, y: -5 }}
 				transition={{ duration: 1 }}
-				className="w-96 flex-none h-[110%] flex-col pt-4 gap-4 bg-slate-700 bg-opacity-45"
+				className="w-full lg:w-96 flex-none h-[110%] flex-col pt-4 gap-4 lg:bg-slate-700 lg:bg-opacity-45"
 			>
 				<Link href="/"
 					className="flex items-center justify-center h-32 shrink-0 cursor-pointer pt-[5px]"
