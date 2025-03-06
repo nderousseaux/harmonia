@@ -104,8 +104,8 @@ export default async function Page(props: { params: Promise<{ id: string }> }) {
 							<h2 className="font-semibold text-2xl">
 								À propos de l&apos;instructeur
 							</h2>
-							<div className="flex space-x-5">
-								<div className="aspect-square shrink-0">
+							<div className="flex flex-col md:flex-row space-y-5 md:space-y-0 md:space-x-5">
+								<div className="md:aspect-square aspect-auto shrink-0">
 									<Image 
 										src="/pp.jpeg"
 										alt="Marie Dupont"
@@ -114,7 +114,7 @@ export default async function Page(props: { params: Promise<{ id: string }> }) {
 									/>
 								</div>
 								<div className="flex flex-col justify-center">
-									<h3 className="font-semibold text-ld">
+									<h3 className="font-semibold text-lg">
 										Marie Dupont
 									</h3>
 									<p className="opacity-75">

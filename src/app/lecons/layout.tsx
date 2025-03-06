@@ -19,7 +19,9 @@ export default async function Layout({ children }: { children: React.ReactNode }
 			<motion.nav 
 				initial={{ opacity: 0, y: -10 }}
 				animate={{ opacity: 1, y: -5 }}
+				exit={{ opacity: 0, y: -10 }}
 				transition={{ duration: 1 }}
+				key={children?.toString()}
 				className="w-full lg:w-96 flex-none h-[110%] flex-col pt-4 gap-4 lg:bg-slate-700 lg:bg-opacity-45 overflow-hidden shrink-[2] lg:shrink-0"
 			>
 				<Link href="/"
@@ -44,7 +46,7 @@ export default async function Layout({ children }: { children: React.ReactNode }
 				initial={{ opacity: 0, y: -10 }}
 				animate={{ opacity: 1, y: 0 }}
 				transition={{ duration: 1, delay: 0.5 }}
-				className="lg:flex-grow overflow-y-auto max-h-[calc(100vh-3rem)]"
+				className="lg:flex-grow overflow-y-scroll"
 			>
 				<PageAnimatePresence>
 					{children}

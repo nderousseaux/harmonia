@@ -5,7 +5,6 @@ import { LayoutRouterContext } from 'next/dist/shared/lib/app-router-context.sha
 import { useContext, useRef } from 'react'
 import { usePathname } from 'next/navigation'
 
-
 export const FrozenRoute = ({ children }: { children: React.ReactNode }) => {
   const context = useContext(LayoutRouterContext)
   const frozen = useRef(context).current
@@ -14,8 +13,16 @@ export const FrozenRoute = ({ children }: { children: React.ReactNode }) => {
 }
 
 export default function PageAnimatePresence(
-  { children } : { children: React.ReactNode }) {
+  { children, disableINotfMobile }: { children: React.ReactNode; disableINotfMobile?: boolean }
+) {
+  disableINotfMobile = disableINotfMobile ?? false;
   const pathname = usePathname()
+  const isMobile = window.matchMedia('(max-width: 1024px)').matches;
+
+  if (disableINotfMobile && !isMobile) {
+    return <>{children}</>
+  }
+
   return (
     <AnimatePresence mode="wait">
       {/**
