@@ -56,7 +56,7 @@ export async function fetchLessons() {
       ORDER BY lessons.id DESC;
     `;
 
-    return lessons.concat(lessons);
+    return lessons;
   }
   catch (error) {
     console.error('Database Error:', error);

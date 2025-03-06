@@ -17,7 +17,7 @@ export default function PageAnimatePresence(
 ) {
   disableINotfMobile = disableINotfMobile ?? false;
   const pathname = usePathname()
-  const isMobile = window.matchMedia('(max-width: 1024px)').matches;
+  const isMobile = typeof window !== 'undefined' && window.matchMedia('(max-width: 1024px)').matches;
 
   if (disableINotfMobile && !isMobile) {
     return <>{children}</>

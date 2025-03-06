@@ -34,7 +34,7 @@ export default async function Layout({ children }: { children: React.ReactNode }
 						Mes leçons
 					</h2>
 					
-					<div className="overflow-y-auto max-h-[calc(100vh-11rem)]">
+					<div className="overflow-y-auto max-h-[calc(100svh-10.5rem)]">
 						<Suspense fallback={<LeconsListSkeleton />}>
 							<LeconsList />
 						</Suspense>

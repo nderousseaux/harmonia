@@ -32,3 +32,11 @@ input[type='number']::-webkit-outer-spin-button {
 
   overflow: hidden;
 }
+
+/* Add to style.css */
+@supports (-webkit-touch-callout: none) {
+  .h-screen {
+    height: 100vh;
+    max-height: -webkit-fill-available !important;
+  }
+}
