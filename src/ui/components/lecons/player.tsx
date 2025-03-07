@@ -16,6 +16,7 @@ export function Player({ className, path, duration }: PlayerProps) {
 
 	// Play/pause state
 	const [isPlaying, setIsPlaying] = useState(false);
+	const [isDragging, setIsDragging] = useState(false);
 	const handlePlay = () => {
 		if (isPlaying) {
 			audioRef.current?.pause();
@@ -64,30 +65,58 @@ export function Player({ className, path, duration }: PlayerProps) {
 	};
 
 	// Handle progress bar drag
-	const handleDotDrag = (e: MouseEvent) => {
+	const handleDotDrag = (e: MouseEvent | TouchEvent) => {
+		e.preventDefault(); // Prevent vertical scroll
 		const progressContainer = progressContainerRef.current;
 		const audio = audioRef.current;
-		if (progressContainer && audio) {
+		const progress = progressRef.current;
+		if (progressContainer && audio && progress) {
 			// Pause the audio
 			audio.pause();
 			const rect = progressContainer.getBoundingClientRect();
-			const offsetX = e.clientX - rect.left;
+			const offsetX = 'touches' in e ? e.touches[0].clientX - rect.left : e.clientX - rect.left;
 			const percentage = offsetX / rect.width;
 			audio.currentTime = percentage * audio.duration;
+			progress.style.width = `${percentage * 100}%`;
 		}
 	};
 
 	// Handle mouse down on progress bar
 	const handleMouseDown = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
 		e.preventDefault();
+		setIsDragging(true);
 		document.addEventListener('mousemove', handleDotDrag);
 		document.addEventListener('mouseup', () => {
 			document.removeEventListener('mousemove', handleDotDrag);
+			setIsDragging(false);
 			// Play the audio
 			if (isPlaying)
 				audioRef.current?.play();
 		}, { once: true });
 	};
+
+	// Handle touch start on progress bar
+	const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
+		e.preventDefault();
+		setIsDragging(true);
+		const touch = e.touches[0];
+		const progressContainer = progressContainerRef.current;
+		const audio = audioRef.current;
+		if (progressContainer && audio) {
+			const rect = progressContainer.getBoundingClientRect();
+			const offsetX = touch.clientX - rect.left;
+			const percentage = offsetX / rect.width;
+			audio.currentTime = percentage * audio.duration;
+		}
+		document.addEventListener('touchmove', handleDotDrag, { passive: false });
+		document.addEventListener('touchend', () => {
+			document.removeEventListener('touchmove', handleDotDrag);
+			setIsDragging(false);
+			// Play the audio
+			if (isPlaying)
+				audioRef.current?.play();
+		}, { once: true });
+	}
 
 	return (
 		<div className={clsx(
@@ -118,21 +147,26 @@ export function Player({ className, path, duration }: PlayerProps) {
 			<div className='w-full py-5 cursor-pointer'
 				onClick={handleProgressClick}
 				onMouseDown={handleMouseDown}
+				onTouchStart={handleTouchStart}
 			>
 				<div 
-					className='w-full h-1 bg-white bg-opacity-20 rounded-full'
+					className='w-full bg-white bg-opacity-20 rounded-full lg:h-1 h-2'
 					ref={progressContainerRef}
 				>
-					<div id='progress' ref={progressRef} className='bg-white rounded-full h-1 w-0 relative'>
+					<div id='progress' ref={progressRef} className='bg-white rounded-full lg:h-1 h-2 w-0 relative'>
 							<div 
-								className='absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-1/2 w-3 h-3 bg-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer'
+								className={clsx(
+									'absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-1/2 bg-white rounded-full transition-all cursor-pointer',
+									{ 'w-4 h-4 opacity-0 group-hover:opacity-100 lg:w-3 lg:h-3': !isDragging },
+									{ 'w-6 h-6 opacity-100 lg:w-4 lg:h-4': isDragging },
+								)}
 							></div>
 					</div>
 				</div>
 			</div>
 
 			{/* Audio player, hidden */}
-			<audio ref={audioRef} className='hidden' controls src={path}>
+			<audio ref={audioRef} className='hidden' controls src={path} preload='metadata'>
 				Your browser does not support the audio element.
 			</audio>
 		</div>
