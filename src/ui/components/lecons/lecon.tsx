@@ -132,73 +132,20 @@ export default async function Lesson(props: { id: string }) {
 	);
 }
 
-export function LeconSkeleton() {
+export function LoadingLecon() {
 	return (
-		<motion.main 
-			initial={{ opacity: 0, y: -10 }}
-			animate={{ opacity: 1, y: 0 }}
-			transition={{ duration: 0.5 }}
-			className="space-y-5"
-		>
-			{/* Back arrow for mobile view */}
-			<section className="block lg:hidden">
-				<div className="w-10 h-8 bg-slate-700 opacity-45 rounded-xl"></div>
-			</section>
+		<main>
 
-			{/* Title and tag */}
-			<section className="space-y-5 xl:space-y-3 pb-5">
-				<div className="flex justify-between items-center">
-					<div className="flex items-center space-x-3 text-2xl lg:text-3xl">
-						<div className="w-96 h-10 bg-slate-700 opacity-45 rounded-xl"></div>
-					</div>
-				</div>
-
-				<div className="flex-wrap flex gap-2">
-					<div className="w-40 h-6 bg-slate-700 opacity-45 rounded-xl"></div>
-					<div className="w-40 h-6 bg-slate-700 opacity-45 rounded-xl"></div>
-					<div className="w-40 h-6 bg-slate-700 opacity-45 rounded-xl"></div>
-				</div>
-			</section>
-
-			<div className="space-y-10">
-				<div className="flex gap-10 flex-col-reverse lg:flex-row">
-					{/* Description */}	
-					<section className="space-y-3 w-full">
-						<div className="w-64 h-10 bg-slate-700 opacity-45 rounded-xl"></div>
-						<div className="h-80 bg-slate-700 opacity-45 rounded-xl"></div>
-					</section>
-
-					{/* Audio player */}
-					<div className="lg:shrink-0 w-full lg:w-72 h-96 bg-slate-700 opacity-45 rounded-xl"></div>
-				</div>
-				
-				{/* Advices */}
-				<section className="space-y-3">
-					<div className="w-64 h-10 bg-slate-700 opacity-45 rounded-xl">
-					</div>
-					<div className="w-full h-96 bg-slate-700 opacity-45 rounded-xl">
-						<p className="opacity-0">
-							Pour tirer pleinement profit de cette séance de méditation, il est essentiel de préparer un environnement dédié à la détente. Commencez par choisir un espace calme, loin du tumulte quotidien, où la lumière est douce et tamisée.
-						</p>
-					</div>
-				</section>
-
-
-				{/* Instructor */}
-				<section className="space-y-3">
-					<div className="w-64 h-10 bg-slate-700 opacity-45 rounded-xl"></div>
-					<div className="flex flex-col md:flex-row space-y-5 md:space-y-0 md:space-x-5 w-full">
-						<div className="md:aspect-square aspect-auto shrink-0">
-							<div className="w-24 h-24 bg-slate-700 opacity-45 rounded-full"></div>
-						</div>
-						<div className="flex flex-col justify-center space-y-2 w-full">
-							<div className="w-32 h-6 bg-slate-700 opacity-45 rounded-xl"></div>
-							<div className="w-full h-20 bg-slate-700 opacity-45 rounded-xl"></div>
-						</div>
-					</div>
-					
-				</section>
-			</div>
-		</motion.main>
+			{/* // Loading spinner	 */}
+			<motion.div 
+				className="flex items-center justify-center h-[80vh]"
+				initial={{ opacity: 0, y: -10 }}
+				animate={{ opacity: 1, y: 0 }}
+				transition={{ duration: 1.5 }}
+				>
+			{/* bg-slate-700 */}
+				<div className="w-10 h-10 border-2 border-white border-t-slate-700 rounded-full animate-spin opacity-75"></div>
+			</motion.div>
+		</main>
 	)
 }

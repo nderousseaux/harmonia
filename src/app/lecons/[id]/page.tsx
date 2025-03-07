@@ -3,7 +3,7 @@ import { Suspense } from 'react';
 import { unstable_cache as cache } from 'next/cache';
 
 import { fetchLessonById } from '@/src/lib/data';
-import Lecon, {LeconSkeleton} from '@/src/ui/components/lecons/lecon';
+import Lecon, {LoadingLecon} from '@/src/ui/components/lecons/lecon';
 
 const getData = cache(
 	(id) => fetchLessonById(id),
@@ -27,7 +27,8 @@ export default async function Page(props: { params: Promise<{ id: string }> }) {
 		<main
 			className="h-full w-full space-y-10 text-white xl:px-32 p-10"
 		>
-			<Suspense fallback={<LeconSkeleton />}>
+			
+			<Suspense fallback={<LoadingLecon />}>
 				<Lecon id={id} />
 			</Suspense>
 		
