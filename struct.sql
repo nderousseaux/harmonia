@@ -4,7 +4,7 @@
 -- https://tableplus.com/
 --
 -- Database: neondb
--- Generation Time: 2025-02-27 22:36:45.0690
+-- Generation Time: 2025-03-07 19:25:30.0000
 -- -------------------------------------------------------------
 
 
@@ -26,7 +26,6 @@ CREATE TABLE "public"."lessons" (
     "title" text NOT NULL,
     "description" text NOT NULL,
     "duration" text NOT NULL,
-    "is_read" bool NOT NULL,
     "path" text,
     PRIMARY KEY ("id")
 );
@@ -41,5 +40,5 @@ CREATE TABLE "public"."tags" (
     PRIMARY KEY ("id")
 );
 
-ALTER TABLE "public"."lesson_tags" ADD FOREIGN KEY ("tag_id") REFERENCES "public"."tags"("id") ON DELETE CASCADE;
 ALTER TABLE "public"."lesson_tags" ADD FOREIGN KEY ("lesson_id") REFERENCES "public"."lessons"("id") ON DELETE CASCADE;
+ALTER TABLE "public"."lesson_tags" ADD FOREIGN KEY ("tag_id") REFERENCES "public"."tags"("id") ON DELETE CASCADE;

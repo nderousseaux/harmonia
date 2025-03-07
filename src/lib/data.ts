@@ -20,7 +20,6 @@ export async function fetchLessonById(id: string) {
         lessons.title,
         lessons.description,
         lessons.duration,
-        lessons.is_read,
         lessons.path
       FROM lessons
       WHERE lessons.id = ${id};
@@ -50,8 +49,7 @@ export async function fetchLessons() {
         lessons.title,
         lessons.description,
         lessons.duration,
-        lessons.path,
-        lessons.is_read
+        lessons.path
       FROM lessons
       ORDER BY lessons.id DESC;
     `;

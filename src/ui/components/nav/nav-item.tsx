@@ -46,11 +46,6 @@ export default function NavItem({ className, isFirst, lesson }: NavItemProps) {
 
         <div className="flex gap-2">
           <h3 className="text-white font-semibold">{lesson.title}</h3>
-          {
-            !lesson.is_read && (
-            <div className="w-2 h-2 bg-white rounded-full self-center translate-y-[1px]"></div>
-            )
-          }
         </div>
 
         <p className="text-white opacity-50 text-sm line-clamp-3">{lesson.description}</p>

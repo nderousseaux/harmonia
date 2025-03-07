@@ -3,7 +3,6 @@ export type Lesson = {
   title: string;
   description: string;
   duration: number;
-	is_read: boolean;
 	path: string;
 	tags: string[];
 };
