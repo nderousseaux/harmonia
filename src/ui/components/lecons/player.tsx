@@ -3,6 +3,8 @@
 import React, { useRef, useState, useEffect } from 'react';
 import clsx from 'clsx';
 
+import Orb from '@/src/ui/components/lecons/orb';
+
 interface PlayerProps {
 	className?: string;
 	path: string;
@@ -124,6 +126,8 @@ export function Player({ className, path, duration }: PlayerProps) {
 				"bg-slate-700 bg-opacity-45 w-full lg:w-72 rounded-lg z-50 relative group",
 				"flex flex-col items-center justify-center px-5 pt-5"
 			)}>
+
+			<Orb hue={70} forceHoverState={isPlaying} hoverIntensity={0.4}/>
 
 			{/* Title and subtitle */}
 			<div className='flex flex-col items-center gap-1'>
