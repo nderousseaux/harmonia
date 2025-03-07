@@ -77,7 +77,7 @@ export function Player({ className, path, duration }: PlayerProps) {
 			const offsetX = 'touches' in e ? e.touches[0].clientX - rect.left : e.clientX - rect.left;
 			const percentage = offsetX / rect.width;
 			audio.currentTime = percentage * audio.duration;
-			progress.style.width = `${percentage * 100}%`;
+			progress.style.width = `${Math.min(percentage * 100, 100)}%`;
 		}
 	};
 
