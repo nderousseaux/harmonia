@@ -18,6 +18,7 @@ export default function RootLayout({children}: { children: React.ReactNode; }) {
 
   return (
     <html lang="fr">
+      <meta name="theme-color" content="rgb(88, 125, 171)" /> 
       <body className={`${primaryFont.className} antialiased bg-gradient-to-br from-stone-600 to-stone-700`}>
         <div className="relative z-10">
           <PageAnimatePresence disableINotfMobile={true}>
