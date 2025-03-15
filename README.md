@@ -31,7 +31,7 @@ Some GSAP and Framer Motion animations are used to make the app more dynamic.
 - Display a list of lessons
 - Display information about a lesson
 - Play the audio of a lesson
-<!-- - Navigate between the audio of a lesson -->
+- Navigate between the audio of a lesson
 - Mark the lesson as done
 
 
@@ -40,13 +40,13 @@ This project implement the best practices of web app development :
 - Nested routing
 - Server-side rendering (SSR)
 - Dynamic rendering
-<!-- - Responsive design -->
-<!-- - Loading skeleton -->
+- Responsive design
+- Loading skeleton
 - Images and fonts optimization
 - Handling errors (404, 500)
 - Mutating data, with refreshing the cache
-<!-- - Accessibility -->
-<!-- - SEO optimization -->
+- Accessibility
+- SEO optimization
 <!-- - Prepare to social sharing -->
 
 

@@ -18,6 +18,7 @@ export default function RootLayout({children}: { children: React.ReactNode; }) {
   return (
     <html lang="fr">
       <meta name="theme-color" content="rgb(88, 125, 171)" /> 
+      <meta name="keywords" content="meditation, relaxation, mindfulness, Harmonia" />
       <body className={`${primaryFont.className} antialiased`} style={{ background: 'linear-gradient(40deg, var(--primary), var(--secondary))' }}>
         <div className="relative z-10">
           <PageAnimatePresence disableINotfMobile={true}>

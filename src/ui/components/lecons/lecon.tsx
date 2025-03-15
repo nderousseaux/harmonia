@@ -112,7 +112,7 @@ export default async function Lesson(props: { id: string }) {
 						<div className="md:aspect-square aspect-auto shrink-0">
 							<Image 
 								src="/pp.jpeg"
-								alt="Marie Dupont"
+								alt="Photo of Marie Dupont"
 								width={400} height={400}
 								className="rounded-full w-[90px] h-[90px]"
 							/>
