@@ -1,11 +1,11 @@
-![Project still in development](https://img.shields.io/badge/status-in%20development-yellow)
+![Project still in development](https://img.shields.io/badge/status-finished-green)
 
 <p align="center">
 	<img src="https://skillicons.dev/icons?i=ts,next,tailwind,postgresql,vercel" height="30" />
 </p>
 
 <p align="center">
-	<img src="docs/img/logo.png" alt="Icon of the project" height="150"/>
+	<img src="docs/logo.png" alt="Icon of the project" height="150"/>
 </p>
 
 # <div align="center">Harmonia</div>
@@ -22,9 +22,9 @@ It use a PostgreSQL database, and a blob storage to store the audio files.
 
 Some GSAP and Framer Motion animations are used to make the app more dynamic.
 
-<!-- <p align="center">
-	<img src="docs/img/dashboard.png" alt="Dashboard" width="1000"/>
-</p> -->
+<p align="center">
+	<img src="docs/dashboard.png" alt="Dashboard" width="1000"/>
+</p>
 
 
 ## ✨ Features
@@ -92,13 +92,10 @@ Or simply push to the main branch, if you have the vercel integration enabled.
 
 
 ## 🌅 Some screenshots
-<!-- <div>
+<div>
 	<img src="docs/hero.png" alt="Hero" height="300"/>
-	<img src="docs/invoices.png" alt="Invoices" height="300"/>
-	<img src="docs/mobile.png" alt="Mobile" height="300"/>
-	<img src="docs/invoices-edit.png" alt="Invoices edit" height="300"/>
-	<img src="docs/customers.png" alt="Customers" height="300"/>
-	<img src="docs/login.png" alt="Login" height="300"/>
-	<img src="docs/skeleton.png" alt="Skeleton" height="300"/>
+	<img src="docs/dashboard.png" alt="Lesson" height="300"/>
+	<img src="docs/mobile.png" alt="Lesson" height="300"/>
 	<img src="docs/404.png" alt="404" height="300"/>
-</p> -->
+	<img src="docs/500.png" alt="Lesson" height="300"/>
+</div>
