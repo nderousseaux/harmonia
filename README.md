@@ -31,8 +31,7 @@ Some GSAP and Framer Motion animations are used to make the app more dynamic.
 - Display a list of lessons
 - Display information about a lesson
 - Play the audio of a lesson
-- Navigate between the audio of a lesson
-- Mark the lesson as done
+- Jump to a specific time in the audio
 
 
 ## 🚀 Tech Stack & Practices
@@ -93,9 +92,9 @@ Or simply push to the main branch, if you have the vercel integration enabled.
 
 ## 🌅 Some screenshots
 <div>
-	<img src="docs/hero.png" alt="Hero" height="300"/>
-	<img src="docs/dashboard.png" alt="Lesson" height="300"/>
-	<img src="docs/mobile.png" alt="Lesson" height="300"/>
-	<img src="docs/404.png" alt="404" height="300"/>
-	<img src="docs/500.png" alt="Lesson" height="300"/>
+	<img src="docs/hero.png" alt="Hero" height="250"/>
+	<img src="docs/dashboard.png" alt="Lesson" height="250"/>
+	<img src="docs/mobile.png" alt="Lesson" height="250"/>
+	<img src="docs/404.png" alt="404" height="250"/>
+	<img src="docs/500.png" alt="Lesson" height="250"/>
 </div>
