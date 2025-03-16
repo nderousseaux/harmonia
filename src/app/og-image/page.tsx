@@ -5,7 +5,7 @@ export default function Page() {
   return (
 		<div className="flex h-screen p-28 gap-10">
 			<div className="w-full flex flex-col items-center justify-center gap-10">
-				<Logo className="text-6xl"/>
+				<Logo className="text-8xl"/>
 			</div>
 			<div className="flex flex-col items-center justify-center p-12 w-128">
 			  <Orb hue={70} forceHoverState={true} hoverIntensity={0.4}/>
