@@ -94,6 +94,7 @@ Or simply push to the main branch, if you have the vercel integration enabled.
 <div>
 	<img src="docs/hero.png" alt="Hero" height="250"/>
 	<img src="docs/dashboard.png" alt="Lesson" height="250"/>
+	<img src="docs/mobile-list.png" alt="Lessons list" height="250"/>
 	<img src="docs/mobile.png" alt="Lesson" height="250"/>
 	<img src="docs/404.png" alt="404" height="250"/>
 	<img src="docs/500.png" alt="Lesson" height="250"/>
