@@ -10,6 +10,30 @@ export const metadata: Metadata = {
     default: 'Harmonia',
   },
   description: 'A meditation app for relaxation and mindfulness.',
+  openGraph: {
+    type: 'website',
+    locale: 'fr_FR',
+    url: 'https://harmonia.nderousseaux.fr',
+    siteName: 'Harmonia',
+    images: [
+      {
+        url: 'https://harmonia.nderousseaux.fr/og-image.png',
+        alt: 'Harmonia - A meditation app for relaxation and mindfulness.',
+      },
+    ],
+  },
+  twitter: {
+    creator: '@nderousseaux',
+    title: 'Harmonia',
+    description: 'A meditation app for relaxation and mindfulness.',
+    card: 'summary_large_image',
+    images: [
+      {
+        url: 'https://harmonia.nderousseaux.fr/og-image.png',
+        alt: 'Harmonia - A meditation app for relaxation and mindfulness.',
+      },
+    ],
+  },
 };
 
 // Main layout component

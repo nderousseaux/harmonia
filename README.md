@@ -47,7 +47,7 @@ This project implement the best practices of web app development :
 - Mutating data, with refreshing the cache
 - Accessibility
 - SEO optimization
-<!-- - Prepare to social sharing -->
+- Prepare to social sharing
 
 
 ## 🛠️ Getting started
