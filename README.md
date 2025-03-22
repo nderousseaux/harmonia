@@ -1,4 +1,4 @@
-![Project still in development](https://img.shields.io/badge/status-finished-green)
+![Finished project](https://img.shields.io/badge/status-finished-green)
 
 <p align="center">
 	<img src="https://skillicons.dev/icons?i=ts,next,tailwind,postgresql,vercel" height="30" />
